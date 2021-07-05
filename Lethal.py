@@ -1,19 +1,37 @@
-import os
-import sys
-import random
-from datetime import datetime
-from os import execl
-from telethon import TelegramClient, events
-from telethon.sessions import StringSession
-from telethon.tl.functions.account import UpdateProfileRequest
-from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3, STRING4 ,STRING5, STRING6, STRING7, STRING8 ,STRING9, STRING10
 import asyncio
-import telethon.utils
-from telethon.tl import functions
-from telethon.tl.functions.channels import LeaveChannelRequest
-from telethon.tl.functions.messages import ImportChatInviteRequest
-from Utils import RAID, RRAID
+import os
+import random
+import sys
+from datetime import datetime
 
+import telethon.utils
+from telethon import TelegramClient, events
+from telethon.errors import (
+    ChannelInvalidError,
+    ChannelPrivateError,
+    ChannelPublicGroupNaError,
+)
+from telethon.sessions import StringSession
+from telethon.tl import functions, types
+from telethon.tl.functions.channels import GetFullChannelRequest, LeaveChannelRequest
+from telethon.tl.functions.messages import GetFullChatRequest, ImportChatInviteRequest
+
+from Config import (
+    API_HASH,
+    API_ID,
+    STRING,
+    STRING2,
+    STRING3,
+    STRING4,
+    STRING5,
+    STRING6,
+    STRING7,
+    STRING8,
+    STRING9,
+    STRING10,
+    SUDO,
+)
+from Utils import RAID, RRAID
 
 a = API_ID
 b = API_HASH
@@ -46,7 +64,8 @@ que = {}
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
-    
+
+
 async def start_Lethal():
     global idk
     global ydk
@@ -65,22 +84,21 @@ async def start_Lethal():
         try:
             print("Booting Up The Client 1")
             await idk.start()
-            botme = await idk.get_me()            
+            botme = await idk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
             idk = "smex"
             print(e)
-            pass
     else:
         print("Session 1 not Found")
         session_name = "startup"
         idk = TelegramClient(session_name, a, b)
         try:
             await idk.start()
-        except Exception as e:
+        except Exception:
             pass
-   
+
     if smexx:
         session_name = str(smexx)
         print("String 2 Found")
@@ -93,15 +111,13 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 2 not Found")
-        pass
         session_name = "startup"
         ydk = TelegramClient(session_name, a, b)
         try:
             await ydk.start()
-        except Exception as e:
+        except Exception:
             pass
 
     if smexxx:
@@ -110,21 +126,19 @@ async def start_Lethal():
         wdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 3")
-            await  wdk.start()
+            await wdk.start()
             botme = await wdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 3 not Found")
-        pass
         session_name = "startup"
         wdk = TelegramClient(session_name, a, b)
         try:
             await wdk.start()
-        except Exception as e:
+        except Exception:
             pass
 
     if smexxxx:
@@ -139,15 +153,13 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 4 not Found")
-        pass
         session_name = "startup"
         hdk = TelegramClient(session_name, a, b)
         try:
             await hdk.start()
-        except Exception as e:
+        except Exception:
             pass
 
     if smexxxxx:
@@ -162,17 +174,15 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 5 not Found")
-        pass
         session_name = "startup"
         sdk = TelegramClient(session_name, a, b)
         try:
             await sdk.start()
-        except Exception as e:
+        except Exception:
             pass
-                  
+
     if sixth:
         session_name = str(sixth)
         print("String 6 Found")
@@ -185,15 +195,13 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 6 not Found")
-        pass
         session_name = "startup"
         adk = TelegramClient(session_name, a, b)
         try:
             await adk.start()
-        except Exception as e:
+        except Exception:
             pass
 
     if seven:
@@ -208,18 +216,15 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 7 not Found")
-        pass
         session_name = "startup"
         bdk = TelegramClient(session_name, a, b)
         try:
             await bdk.start()
-        except Exception as e:
-            pass    
-        
-    
+        except Exception:
+            pass
+
     if eight:
         session_name = str(eight)
         print("String 8 Found")
@@ -232,41 +237,36 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 8 not Found")
-        pass
         session_name = "startup"
         cdk = TelegramClient(session_name, a, b)
         try:
             await cdk.start()
-        except Exception as e:
-            pass   
-        
+        except Exception:
+            pass
+
     if ninth:
         session_name = str(ninth)
         print("String 9 Found")
         ddk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 9")
-            await ddk.start()           
+            await ddk.start()
             botme = await ddk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 9 not Found")
-        pass
         session_name = "startup"
         ddk = TelegramClient(session_name, a, b)
         try:
             await ddk.start()
-        except Exception as e:
-            pass   
-    
-  
+        except Exception:
+            pass
+
     if tenth:
         session_name = str(tenth)
         print("String 10 Found")
@@ -279,19 +279,19 @@ async def start_Lethal():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-            pass
     else:
         print("Session 10 not Found")
-        pass
         session_name = "startup"
         edk = TelegramClient(session_name, a, b)
         try:
             await edk.start()
-        except Exception as e:
-            pass 
+        except Exception:
+            pass
+
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(start_Lethal())       
+loop.run_until_complete(start_Lethal())
+
 
 async def gifspam(e, smex):
     try:
@@ -305,9 +305,10 @@ async def gifspam(e, smex):
                 unsave=True,
             )
         )
-    except Exception as e:
+    except Exception:
         pass
-            
+
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
@@ -317,7 +318,7 @@ async def gifspam(e, smex):
 @bdk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.join"))        
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.join <Public Channel or Group Link/Username>"
     if e.sender_id in SMEX_USERS:
@@ -325,15 +326,16 @@ async def _(e):
         if len(e.text) > 6:
             bc = Lethal[0]
             text = "Joining..."
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text, parse_mode=None, link_preview=None)
             try:
                 await e.client(functions.channels.JoinChannelRequest(channel=bc))
                 await event.edit("Succesfully Joined")
             except Exception as e:
-                await event.edit(str(e))   
+                await event.edit(str(e))
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-            
+            await e.reply(usage, parse_mode=None, link_preview=None)
+
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
@@ -343,7 +345,7 @@ async def _(e):
 @bdk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))        
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/HGYs1wvsPUplMmM1\n\n.pjoin HGYs1wvsPUplMmM1"
     if e.sender_id in SMEX_USERS:
@@ -351,17 +353,19 @@ async def _(e):
         if len(e.text) > 7:
             bc = Lethal[0]
             text = "Joining...."
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text, parse_mode=None, link_preview=None)
             try:
                 await e.client(ImportChatInviteRequest(bc))
                 await event.edit("Succesfully Joined")
             except Exception as e:
-                await event.edit(str(e))   
+                await event.edit(str(e))
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-            
-        
+            await e.reply(usage, parse_mode=None, link_preview=None)
+
+
 idk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
+
+
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @hdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
@@ -370,7 +374,7 @@ idk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @bdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))        
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
@@ -379,16 +383,16 @@ async def _(e):
             bc = Lethal[0]
             bc = int(bc)
             text = "Leaving....."
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text, parse_mode=None, link_preview=None)
             try:
                 await event.client(LeaveChannelRequest(bc))
                 await event.edit("Succesfully Left")
             except Exception as e:
-                await event.edit(str(e))   
+                await event.edit(str(e))
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-                      
-        
+            await e.reply(usage, parse_mode=None, link_preview=None)
+
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
@@ -404,31 +408,31 @@ async def spam(e):
     error = "Spam Module can only be used till 100 count. For bigger spams use BigSpam."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
         if len(Lethal) == 2:
             message = str(Lethal[1])
             counter = int(Lethal[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None )
+                return await e.reply(error, parse_mode=None, link_preview=None)
             await asyncio.wait([e.respond(message) for i in range(counter)])
-        elif e.reply_to_msg_id and smex.media:  
+        elif e.reply_to_msg_id and smex.media:
             counter = int(Lethal[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None )
+                return await e.reply(error, parse_mode=None, link_preview=None)
             for _ in range(counter):
                 smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
-                await gifspam(e, smex)  
+                await gifspam(e, smex)
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(Lethal[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None )
+                return await e.reply(error, parse_mode=None, link_preview=None)
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-            
+            await e.reply(usage, parse_mode=None, link_preview=None)
+
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.delayspam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.delayspam"))
@@ -444,7 +448,7 @@ async def spam(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗹𝗮𝘆𝗦𝗽𝗮𝗺\n\nCommand:\n\n.delayspam <sleep time> <count> <message to spam>\n\n.delayspam <sleep time> <count> <reply to a message>\n\nCount and Sleeptime must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         smex = await e.get_reply_message()
         Lethal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
         Lethalsexy = Lethal[1:]
@@ -459,13 +463,13 @@ async def spam(e):
                     else:
                         await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
-        elif e.reply_to_msg_id and smex.media:  
+        elif e.reply_to_msg_id and smex.media:
             counter = int(Lethalsexy[0])
             sleeptime = float(Lethal[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
-                    await gifspam(e, smex) 
+                    await gifspam(e, smex)
                 await asyncio.sleep(sleeptime)
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
@@ -476,7 +480,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage, parse_mode=None, link_preview=None)
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
@@ -493,7 +497,7 @@ async def spam(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\n\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
         if len(Lethal) == 2:
@@ -506,13 +510,13 @@ async def spam(e):
                     else:
                         await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.3)
-        elif e.reply_to_msg_id and smex.media:  
+        elif e.reply_to_msg_id and smex.media:
             counter = int(Lethal[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
-                    await gifspam(e, smex) 
-                await asyncio.sleep(0.3)  
+                    await gifspam(e, smex)
+                await asyncio.sleep(0.3)
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(Lethal[0])
@@ -521,7 +525,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.3)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage, parse_mode=None, link_preview=None)
 
 
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.raid"))
@@ -538,9 +542,9 @@ async def spam(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
+        await e.get_reply_message()
         if len(Lethal) == 2:
             message = str(Lethal[1])
             print(message)
@@ -555,7 +559,7 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(0.3)
-        elif e.reply_to_msg_id:             
+        elif e.reply_to_msg_id:
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
             g = b.id
@@ -569,10 +573,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(0.3)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-
-
-
+            await e.reply(usage, parse_mode=None, link_preview=None)
 
 
 @idk.on(events.NewMessage(incoming=True))
@@ -597,9 +598,9 @@ async def _(event):
             entity=event.chat_id,
             message="""{}""".format(random.choice(RRAID)),
             reply_to=event.message.id,
-        )           
-            
-            
+        )
+
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
@@ -615,9 +616,9 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.replyraid <Username of User>\n\n.replyraid <reply to a User>"
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
+        await e.get_reply_message()
         if len(e.text) > 11:
             message = str(Lethal[0])
             a = await e.client.get_entity(message)
@@ -627,8 +628,8 @@ async def _(e):
             appendable = [g]
             qeue.append(appendable)
             text = "Activated Reply Raid"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        elif e.reply_to_msg_id:             
+            await e.reply(text, parse_mode=None, link_preview=None)
+        elif e.reply_to_msg_id:
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
             g = b.id
@@ -637,11 +638,11 @@ async def _(e):
             appendable = [g]
             qeue.append(appendable)
             text = "Activated Reply Raid"
-            await e.reply(text, parse_mode=None, link_preview=None )
+            await e.reply(text, parse_mode=None, link_preview=None)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage, parse_mode=None, link_preview=None)
 
-            
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.dreplyraid"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.dreplyraid"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.dreplyraid"))
@@ -657,9 +658,9 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.dreplyraid <Username of User>\n\n.dreplyraid <reply to a User>"
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
+        await e.get_reply_message()
         if len(e.text) > 12:
             message = str(Lethal[0])
             a = await e.client.get_entity(message)
@@ -667,25 +668,24 @@ async def _(e):
             try:
                 queue = que.get(g)
                 queue.pop(0)
-            except Exception as f:
+            except Exception:
                 pass
             text = "De-Activated Reply Raid"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        elif e.reply_to_msg_id:             
+            await e.reply(text, parse_mode=None, link_preview=None)
+        elif e.reply_to_msg_id:
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
             g = b.id
             try:
                 queue = que.get(g)
                 queue.pop(0)
-            except Exception as f:
+            except Exception:
                 pass
             text = "De-Activated Reply Raid"
-            await e.reply(text, parse_mode=None, link_preview=None )
+            await e.reply(text, parse_mode=None, link_preview=None)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-    
-       
+            await e.reply(usage, parse_mode=None, link_preview=None)
+
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
@@ -701,15 +701,11 @@ async def ping(e):
     if e.sender_id in SMEX_USERS:
         start = datetime.now()
         text = "Pong!"
-        event = await e.reply(text, parse_mode=None, link_preview=None )
+        event = await e.reply(text, parse_mode=None, link_preview=None)
         end = datetime.now()
-        ms = (end-start).microseconds / 1000
+        ms = (end - start).microseconds / 1000
         await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀")
 
-
-
-        
-        
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
@@ -724,55 +720,51 @@ async def ping(e):
 async def restart(e):
     if e.sender_id in SMEX_USERS:
         text = "𝙍𝙚𝙨𝙩𝙖𝙧𝙩𝙚𝙙\n\nPlease wait till it reboots..."
-        await e.reply(text, parse_mode=None, link_preview=None )
+        await e.reply(text, parse_mode=None, link_preview=None)
         try:
             await idk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await ydk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await wdk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await hdk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await sdk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await adk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await bdk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await cdk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await ddk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         try:
             await edk.disconnect()
-        except Exception as e:
+        except Exception:
             pass
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
 
-        
-        
-        
-        
-        
+
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.help"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.help"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.help"))
@@ -785,30 +777,12 @@ async def restart(e):
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.help"))
 async def help(e):
     if e.sender_id in SMEX_USERS:
-       text = "𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n𝙐𝙩𝙞𝙡𝙨 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.ping\n.restart\n\n𝙐𝙨𝙚𝙧𝙗𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.bio\n.join\n.pjoin\n.leave\n\n𝙎𝙥𝙖𝙢 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid\n.dreplyraid\n\n\nFor more help regarding usage of plugins type plugins name"
-       await e.reply(text, parse_mode=None, link_preview=None )
+        text = "𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n𝙐𝙩𝙞𝙡𝙨 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.ping\n.restart\n\n𝙐𝙨𝙚𝙧𝙗𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.bio\n.join\n.pjoin\n.leave\n\n𝙎𝙥𝙖𝙢 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid\n.dreplyraid\n\n\nFor more help regarding usage of plugins type plugins name"
+        await e.reply(text, parse_mode=None, link_preview=None)
 
-#--------------------------------------------------------------------------------------------------------------------------------
 
-import asyncio, time, io, math, os, logging, asyncio, shutil, re, subprocess, json
-from base64 import b64decode
-from telethon.events import NewMessage
-from telethon.tl.custom import Dialog
-from telethon.tl.types import Channel, Chat, User
-from telethon.tl import functions, types
-from telethon.tl.functions.messages import GetHistoryRequest, CheckChatInviteRequest, GetFullChatRequest
-from telethon.errors import (ChannelInvalidError, ChannelPrivateError, ChannelPublicGroupNaError, InviteHashEmptyError, InviteHashExpiredError, InviteHashInvalidError)
-from telethon.tl.functions.channels import GetFullChannelRequest, GetParticipantsRequest
-from telethon.errors import FloodWaitError
-from time import sleep
-from html import unescape
-from urllib.parse import quote_plus
-from urllib.error import HTTPError
-from telethon import events
-from requests import get
-from asyncio import sleep
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-import random
+# --------------------------------------------------------------------------------------------------------------------------------
+
 
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
@@ -827,35 +801,37 @@ async def get_chatinfo(event):
             chat = event.chat_id
     try:
         chat_info = await event.client(GetFullChatRequest(chat))
-    except:
+    except BaseException:
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
             await event.reply("`Invalid channel/group`")
             return None
         except ChannelPrivateError:
-            await event.reply("`This is a private channel/group or I am banned from there`")
+            await event.reply(
+                "`This is a private channel/group or I am banned from there`"
+            )
             return None
         except ChannelPublicGroupNaError:
             await event.reply("`Channel or supergroup doesn't exist`")
             return None
-        except (TypeError, ValueError) as err:
+        except (TypeError, ValueError):
             await event.reply("`Invalid channel/group`")
             return None
     return chat_info
 
+
 async def edit_or_reply(event, msg):
-  await event.edit(msg)
+    await event.edit(msg)
+
 
 def user_full_name(user):
     names = [user.first_name, user.last_name]
     names = [i for i in list(names) if i]
-    full_name = ' '.join(names)
+    full_name = " ".join(names)
     return full_name
 
 
-        
-        
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
@@ -866,36 +842,43 @@ def user_full_name(user):
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
-async def get_users(event):   
-    sender = await event.get_sender() ; me = await event.client.get_me()
+async def get_users(event):
+    sender = await event.get_sender()
+    me = await event.client.get_me()
     if not sender.id == me.id:
         hell = await event.reply("`processing...`")
     else:
-    	hell = await event.edit("`processing...`")
-    legendx22 = await get_chatinfo(event) ; chat = await event.get_chat()
+        hell = await event.edit("`processing...`")
+    legendx22 = await get_chatinfo(event)
+    chat = await event.get_chat()
     if event.is_private:
-              return await hell.edit("`Sorry, Can add users here`")    
-    s = 0 ; f = 0 ; error = 'None'   
-  
+        return await hell.edit("`Sorry, Can add users here`")
+    s = 0
+    f = 0
+    error = "None"
+
     await hell.edit("**TerminalStatus**\n\n`Collecting Users.......`")
     async for user in event.client.iter_participants(legendx22.full_chat.id):
-                try:
-                    if error.startswith("Too"):
-                        return await hell.edit(f"**Terminal Finished With Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people")
-                    await event.client(functions.channels.InviteToChannelRequest(channel=chat,users=[user.id]))
-                    s = s + 1                                                    
-                    await hell.edit(f"**Terminal Running...**\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")                
-                except Exception as e:
-                    error = str(e) ; f = f + 1             
-    return await hell.edit(f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people")
+        try:
+            if error.startswith("Too"):
+                return await hell.edit(
+                    f"**Terminal Finished With Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people"
+                )
+            await event.client(
+                functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
+            )
+            s = s + 1
+            await hell.edit(
+                f"**Terminal Running...**\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`"
+            )
+        except Exception as e:
+            error = str(e)
+            f = f + 1
+    return await hell.edit(
+        f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people"
+    )
 
 
-
-
-
-
-    
-        
 text = """
 ░░╚██╔╝░░██║░░░██║██╔═██╗░██╔═██╗░██║
 ░░░██║░░░╚██████╔╝██║░╚██╗██║░╚██╗██║
@@ -903,86 +886,88 @@ text = """
 
 print(text)
 print("")
-print("CONGRATULATIONS 🥳🥳..UR LETHAL SPAM BOT IS READY TO USE..NOW TYPE ..ping TO CHEACK I AM OR NOT ... JOIN SUPPORT - @LETHAL_SPAMBOT_SUPPORT")
+print(
+    "CONGRATULATIONS 🥳🥳..UR LETHAL SPAM BOT IS READY TO USE..NOW TYPE ..ping TO CHEACK I AM OR NOT ... JOIN SUPPORT - @LETHAL_SPAMBOT_SUPPORT"
+)
 if len(sys.argv) not in (1, 3, 4):
     try:
         idk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         ydk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         wdk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         hdk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         sdk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         adk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         bdk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         cdk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         edk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
     try:
         ddk.disconnect()
-    except Exception as e:
+    except Exception:
         pass
 else:
     try:
         idk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         ydk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         wdk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         hdk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         sdk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         adk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         bdk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         cdk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         edk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
     try:
         ddk.run_until_disconnected()
-    except Exception as e:
+    except Exception:
         pass
