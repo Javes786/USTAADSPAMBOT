@@ -363,9 +363,7 @@ async def _(e):
             await e.reply(usage, parse_mode=None, link_preview=None)
 
 
-idk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
-
-
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @hdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
@@ -374,24 +372,24 @@ idk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @bdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.leave"))        
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
-        Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+       Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
             bc = Lethal[0]
             bc = int(bc)
             text = "Leaving....."
-            event = await e.reply(text, parse_mode=None, link_preview=None)
+            event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await event.client(LeaveChannelRequest(bc))
                 await event.edit("Succesfully Left")
             except Exception as e:
-                await event.edit(str(e))
+                await event.edit(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
-
+            await e.reply(usage, parse_mode=None, link_preview=None )
+           
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
