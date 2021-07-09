@@ -857,7 +857,8 @@ def user_full_name(user):
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.add"))
-sender = await event.get_sender() ; me = await event.client.get_me()
+async def get_users(event):
+    sender = await event.get_sender() ; me = await event.client.get_me()
     if not sender.id == me.id:
         rkp = await event.reply("`processing...`")
     else:
