@@ -782,6 +782,17 @@ async def help(e):
 # --------------------------------------------------------------------------------------------------------------------------------
 
 
+from telethon.errors import (
+    ChannelInvalidError,
+    ChannelPrivateError,
+    ChannelPublicGroupNaError,
+)
+from telethon.tl import functions
+from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.functions.messages import GetFullChatRequest
+
+from . import *
+
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
     chat_info = None
@@ -799,7 +810,7 @@ async def get_chatinfo(event):
             chat = event.chat_id
     try:
         chat_info = await event.client(GetFullChatRequest(chat))
-    except BaseException:
+    except:
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
@@ -819,15 +830,66 @@ async def get_chatinfo(event):
     return chat_info
 
 
-async def edit_or_reply(event, msg):
-    await event.edit(msg)
-
-
 def user_full_name(user):
     names = [user.first_name, user.last_name]
     names = [i for i in list(names) if i]
     full_name = " ".join(names)
     return full_name
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+async def get_users(event):
+    sender = await event.get_sender()
+    me = await event.client.get_me()
+    if not sender.id == me.id:
+        hell = await eor(event, "`processing...`")
+    else:
+        hell = await eor(event, "`processing...`")
+    he_ll = event.pattern_match.group(1)
+    if he_ll == "@FIGHTERS_KA_ADDA":
+        return await hell.edit("Restricted to invite users from there.")
+    elif he_ll == "@FIGHTERS_KA_ADDA":
+        return await hell.edit("Restricted to invite users from there.")
+    elif he_ll == "@FIGHTERS_KA_ADDA":
+        return await hell.edit("Restricted to invite users from there.")
+    kraken = await get_chatinfo(event)
+    chat = await event.get_chat()
+    if event.is_private:
+        return await hell.edit("`Sorry, Cant add users here`")
+    s = 0
+    f = 0
+    error = "None"
+
+    await hell.edit("**INVITING USERS !!**")
+    async for user in event.client.iter_participants(kraken.full_chat.id):
+        try:
+            if error.startswith("Too"):
+                return await hell.edit(
+                    f"**INVITING FINISHED !**\n\n**Error :** \n`{error}`\n\n**Invited :**  `{s}` users. \n**Failed to Invite :** `{f}` users."
+                )
+            await event.client(
+                functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
+            )
+            s = s + 1
+            await hell.edit(
+                f"**INVITING USERS.. **\n\n**Invited :**  `{s}` users \n**Failed to Invite :**  `{f}` users.\n\n**×Error :**  `{error}`"
+            )
+        except Exception as e:
+            error = str(e)
+            f = f + 1
+    return await hell.edit(
+        f"**INVITING FINISHED** \n\n**Invited :**  `{s}` users \n**Failed :**  `{f}` users."
+    )
+
+
 
 
 text = """
