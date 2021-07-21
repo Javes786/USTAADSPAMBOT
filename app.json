@@ -1,5 +1,5 @@
 {
-  "name": "LETHAL SPAMBOT",
+  "name": "USTAAD SPAMBOT",
   "description": "A Powerful Telegram Spam Userbot.",
   "logo": "https://telegra.ph/file/28decbfdab4790a62940d.jpg",
   "keywords": [
@@ -10,12 +10,12 @@
     "env": {      
       "API_HASH": {
         "description": "Api Hash",
-        "value": "",
+        "value": "5a8c08fb552474349c4f0aa620635e20",
         "required": true
       },
       "API_ID": {
         "description": "Telethon String Session",
-        "value": "",
+        "value": "1392436",
         "required": true
       },
       "STRING": {
@@ -70,7 +70,7 @@
       },
         "SUDO": {
         "description": "Sudo Users Id",
-        "value": "",
+        "value": "511112479",
         "required": true
       }
   },
