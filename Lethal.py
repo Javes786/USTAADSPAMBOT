@@ -389,7 +389,29 @@ async def _(e):
                 await event.edit(str(e))   
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
-            
+
+#--------------------------
+ 
+from telethon.tl.functions.channels import LeaveChannelRequest as leave
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
+async def f(event):
+    if e.sender_id in SMEX_USERS:
+       async for x in bot.iter_dialogs():
+         if x.is_group:
+           await bot(leave(x.id))           
+
+#------------------------
+
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
