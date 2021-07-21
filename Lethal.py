@@ -406,9 +406,9 @@ from telethon.tl.functions.channels import LeaveChannelRequest as leave
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
 async def f(event):
     if event.sender_id in SMEX_USERS:
-       async for x in bot.iter_dialogs():
+       async for x in idk.iter_dialogs():
          if x.is_group:
-           await bot(leave(x.id))           
+           await idk(leave(x.id))           
 
 #------------------------
 
