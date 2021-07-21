@@ -1,1 +1,1 @@
-worker: python3 Lethal.py
+worker: python3 atgk.py
