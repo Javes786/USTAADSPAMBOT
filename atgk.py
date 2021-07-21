@@ -724,7 +724,7 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None)
         end = datetime.now()
         ms = (end - start).microseconds / 1000
-        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n 𝗨𝗦𝗧𝗔𝗗'𝗦 𝗦𝗣𝗔𝗠𝗕𝗢𝗧 𝗢𝗡 𝗙𝗜𝗥𝗘 🔥")
+        await event.edit(f"🖕👅💧💦 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n 𝗦𝗣𝗔𝗠𝗕𝗢𝗧 𝗢𝗡 𝗙𝗜𝗥𝗘 🔥")
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
@@ -913,14 +913,17 @@ async def get_users(event):
 
 
 text = """
-░░╚██╔╝░░██║░░░██║██╔═██╗░██╔═██╗░██║
-░░░██║░░░╚██████╔╝██║░╚██╗██║░╚██╗██║
-░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝"""
+╱╭━━━╮               
+╱┃╭━╮┃               
+╱┃┃╱┃┣╮╭┳━━┳━━┳━╮  
+╱┃╰━╯┃╰╯┃╭╮┃╭╮┃╭╮╮ 
+╱┃╭━╮┃┃┃┃╭╮┃╭╮┃┃┃┃ 
+╱╰╯╱╰┻┻┻┻╯╰┻╯╰┻╯╰╯"""
 
 print(text)
 print("")
 print(
-    "CONGRATULATIONS 🥳🥳..UR LETHAL SPAM BOT IS READY TO USE..NOW TYPE ..ping TO CHEACK I AM OR NOT ... JOIN SUPPORT - @LETHAL_SPAMBOT_SUPPORT"
+    "CONGRATULATIONS 🥳🥳..UR USTAAD SPAM BOT IS READY "
 )
 if len(sys.argv) not in (1, 3, 4):
     try:
