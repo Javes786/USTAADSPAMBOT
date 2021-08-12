@@ -773,7 +773,7 @@ from telethon.tl.functions.messages import GetFullChatRequest
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.uspam"))
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗨𝗦𝗽𝗮𝗺\n\nCommand:\n\n.uspam <message to spam>\n\n.restart ~ to stop uspam...\n\nunlimited spam as to stop manually or dynos finished."
-    if e.sender_id in SEMX_USERS:
+    if e.sender_id in SMEX_USERS:
       xD = e.text[7:]
       a = 1
       while a == 1:
