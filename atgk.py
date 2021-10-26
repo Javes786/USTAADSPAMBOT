@@ -341,22 +341,37 @@ async def _(e):
  
 from telethon.tl.functions.channels import LeaveChannelRequest as leave
 
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.End"))
-async def f(event):
-    if event.sender_id in SMEX_USERS:
-       async for x in idk.iter_dialogs():
-         if x.is_group:
-           await idk(leave(x.id))           
+amaan786 = os.environ.get("PM_IMG", None)
+if not amaan786:
+ amaan786 = "https://telegra.ph/file/9a55abc7b250a0b9ae7f9.jpg"
+pm_caption = "• **Sᴘᴀᴍᴍᴇʀ ɪs:** `Oɴʟɪɴᴇ`\n\n"
+pm_caption += "• **Pʏᴛʜᴏɴ:** `3.9.7` \n"
+pm_caption += "• **Dᴀᴛᴀʙᴀsᴇ Sᴛᴀᴛᴜs:**  `Fᴜɴᴄᴛɪᴏɴᴀʟ`\n"
+pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíиg ρяορєяℓγ`"
 
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+async def f(event):
+    if not event.sender_id in SMEX_USERS:
+      return await event.reply("kid you are not my owner (sed)")
+  await idk.send_file(event.chat_id, amaan786, caption=pm_caption)       
+  await ydk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await wdk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await hdk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await sdk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await adk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await bdk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await cdk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await edk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await ddk.send_file(event.chat_id, amaan786, caption=pm_caption)
 #------------------------
 abcd = "@CoPYLess786|@CRiMiNaL786"
 import re
