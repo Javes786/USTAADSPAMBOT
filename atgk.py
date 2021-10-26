@@ -775,32 +775,7 @@ async def _(e):
 
 #-----------------------------------------------------------------------------
 
-#--------------------------
 
-amaan786 = os.environ.get("PM_IMG", None)
-if not amaan786:
- amaan786 = "https://telegra.ph/file/9a55abc7b250a0b9ae7f9.jpg"
-pm_caption = "• **Sᴘᴀᴍᴍᴇʀ ɪs:** `Oɴʟɪɴᴇ`\n\n"
-pm_caption += "• **Pʏᴛʜᴏɴ:** `3.9.7` \n"
-pm_caption += "• **Dᴀᴛᴀʙᴀsᴇ Sᴛᴀᴛᴜs:**  `Fᴜɴᴄᴛɪᴏɴᴀʟ`\n"
-pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíиg ρяορєяℓγ`"
-
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-async def f(event):
-    if event.sender_id in SMEX_USERS:
-      await event.send_file(event.chat_id, amaan786, caption=pm_caption, force_document=False, link_preview=False)   
-import time
-from time import sleep
-#-------------------------------------------------------------------------------
 
 
 
