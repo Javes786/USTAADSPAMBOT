@@ -362,6 +362,7 @@ pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíи
 async def f(event):
     if not event.sender_id in SMEX_USERS:
       return await event.reply("kid you are not my owner (sed)")
+    else:
   await idk.send_file(event.chat_id, amaan786, caption=pm_caption)       
   await ydk.send_file(event.chat_id, amaan786, caption=pm_caption)
   await wdk.send_file(event.chat_id, amaan786, caption=pm_caption)
