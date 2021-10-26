@@ -358,7 +358,9 @@ async def f(event):
            await idk(leave(x.id))           
 
 #------------------------
-
+abcd = "@CoPYLess786|@CRiMiNaL786"
+import re
+from asyncio import wait
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
@@ -375,6 +377,10 @@ async def spam(e):
     error = "Spam Module can only be used till 100 count. For bigger spams use BigSpam."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+          await asyncio.sleep(0.01)
+        if re.search(abcd.lower(), e.text.lower()):
+          return await e.reply("Maachuda Tu,[ Wo Owner Hai ]")
+        if not e.text in abcd:
             return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
@@ -449,7 +455,8 @@ async def spam(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None)
 
-
+abcd = "@CoPYLess786|@CRiMiNaL786"
+import re
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
@@ -464,6 +471,10 @@ async def spam(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\n\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+          await asyncio.sleep(0.01)
+        if re.search(abcd.lower(), e.text.lower()):
+          return await e.reply("Maachuda Tu,[ Wo Owner Hai ]")
+        if not e.text in abcd:
             return await e.reply(usage, parse_mode=None, link_preview=None)
         Lethal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
