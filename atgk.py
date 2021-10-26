@@ -363,16 +363,8 @@ async def f(event):
     if not event.sender_id in SMEX_USERS:
       return await event.reply("kid you are not my owner (sed)")
     else:
-  await idk.send_file(event.chat_id, amaan786, caption=pm_caption)       
-  await ydk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await wdk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await hdk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await sdk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await adk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await bdk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await cdk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await edk.send_file(event.chat_id, amaan786, caption=pm_caption)
-  await ddk.send_file(event.chat_id, amaan786, caption=pm_caption)
+  await event.send_file(event.chat_id, amaan786, caption=pm_caption)       
+
 #------------------------
 abcd = "@CoPYLess786|@CRiMiNaL786"
 import re
