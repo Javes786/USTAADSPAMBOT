@@ -362,8 +362,7 @@ pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíи
 async def f(event):
     if not event.sender_id in SMEX_USERS:
       return await event.reply("kid you are not my owner (sed)")
-    else:
-  await event.send_file(event.chat_id, amaan786, caption=pm_caption)       
+await event.send_file(event.chat_id, amaan786, caption=pm_caption)       
 
 #------------------------
 abcd = "@CoPYLess786|@CRiMiNaL786"
