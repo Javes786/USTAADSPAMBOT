@@ -337,32 +337,7 @@ async def _(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
-#--------------------------
- 
-from telethon.tl.functions.channels import LeaveChannelRequest as leave
-
-amaan786 = os.environ.get("PM_IMG", None)
-if not amaan786:
- amaan786 = "https://telegra.ph/file/9a55abc7b250a0b9ae7f9.jpg"
-pm_caption = "• **Sᴘᴀᴍᴍᴇʀ ɪs:** `Oɴʟɪɴᴇ`\n\n"
-pm_caption += "• **Pʏᴛʜᴏɴ:** `3.9.7` \n"
-pm_caption += "• **Dᴀᴛᴀʙᴀsᴇ Sᴛᴀᴛᴜs:**  `Fᴜɴᴄᴛɪᴏɴᴀʟ`\n"
-pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíиg ρяορєяℓγ`"
-
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-async def f(event):
-    if not event.sender_id in SMEX_USERS:
-      return await event.reply("kid you are not my owner (sed)")
-    await event.send_file(event.chat_id, amaan786, caption=pm_caption)       
+#--------------------------------------------------------------------------    
 
 #------------------------
 abcd = "@CoPYLess786|@CRiMiNaL786"
@@ -797,6 +772,35 @@ async def _(e):
       while a == 1:
         await e.client.send_message(e.chat, xD)
         await asyncio.sleep(0.5)
+
+#-----------------------------------------------------------------------------
+
+#--------------------------
+
+amaan786 = os.environ.get("PM_IMG", None)
+if not amaan786:
+ amaan786 = "https://telegra.ph/file/9a55abc7b250a0b9ae7f9.jpg"
+pm_caption = "• **Sᴘᴀᴍᴍᴇʀ ɪs:** `Oɴʟɪɴᴇ`\n\n"
+pm_caption += "• **Pʏᴛʜᴏɴ:** `3.9.7` \n"
+pm_caption += "• **Dᴀᴛᴀʙᴀsᴇ Sᴛᴀᴛᴜs:**  `Fᴜɴᴄᴛɪᴏɴᴀʟ`\n"
+pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíиg ρяορєяℓγ`"
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
+async def f(event):
+    if not str(event.sender_id) in SMEX_USERS:
+      return await event.reply("kid you are not my owner (sed)")
+    await event.send_file(event.chat_id, amaan786, caption=pm_caption)   
+
+#-------------------------------------------------------------------------------
 
 
 
