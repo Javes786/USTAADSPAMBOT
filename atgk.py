@@ -796,10 +796,10 @@ pm_caption += "• **Hᴇʀᴏᴋᴜ Dᴀᴛᴀʙᴀsᴇ** : `AWS - ωοяκíи
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 async def f(event):
-    if not str(event.sender_id) in SMEX_USERS:
-      return await event.reply("kid you are not my owner (sed)")
-    await event.send_file(event.chat_id, amaan786, caption=pm_caption)   
-
+    if event.sender_id in SMEX_USERS:
+      await event.send_file(event.chat_id, amaan786, caption=pm_caption, force_document=False, link_preview=False)   
+import time
+from time import sleep
 #-------------------------------------------------------------------------------
 
 
