@@ -288,9 +288,8 @@ async def start_Lethal():
         except Exception:
             pass
 
-
-  loop = asyncio.get_event_loop()
-  loop.run_until_complete(start_Lethal())
+loop = asyncio.get_event_loop()
+loop.run_until_complete(start_Lethal())
 
 
 async def gifspam(e, smex):
