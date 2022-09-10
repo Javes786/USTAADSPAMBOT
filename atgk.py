@@ -339,7 +339,7 @@ async def _(e):
 #--------------------------------------------------------------------------    
 
 #------------------------
-abcd = "@CoPYLess786|@CRiMiNaL786"
+abcd = "@AMAANTGK|@CRiMiNaL786"
 import re
 from asyncio import wait
 
@@ -436,7 +436,7 @@ async def spam(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None)
 
-abcd = "@CoPYLess786|@CRiMiNaL786"
+abcd = "@AMAANTGK|@CRiMiNaL786"
 import re
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.bigspam"))
@@ -563,7 +563,7 @@ async def _(event):
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.eplyraid"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @sdk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @adk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
 @bdk.on(events.NewMessage(incoming=True, pattern=r"\.replyraid"))
@@ -596,7 +596,7 @@ async def _(e):
             qeue = que.get(g)
             appendable = [g]
             qeue.append(appendable)
-            text = "Activated Reply Raid"
+            text = "Activated MaaChodne WaLi Reply Raid"
             await e.reply(text, parse_mode=None, link_preview=None)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None)
